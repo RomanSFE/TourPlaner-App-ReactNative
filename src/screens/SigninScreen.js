@@ -1,9 +1,16 @@
-import React from 'react'
+// import React from 'react'
+import React, { Component } from 'react'
 import { View, StyleSheet, Text, ImageBackground } from 'react-native'
 import Input from '../components/common/Input'
 import Button from '../components/common/Button'
 
-const SigninScreen = () => {
+  class SigninScreen extends Component {
+
+    Explorer = () => {
+        this.props.navigation.navigate('Explorer')
+    }
+
+    render() {
 
     return (
         <View>
@@ -18,13 +25,14 @@ const SigninScreen = () => {
                   <Input placeholder='Enter Your Email or Phone Number' />
                   <Input placeholder='Enter Your Password' secureTextEntry={true} />
 
-                  <Button title="Sign In" style={{ width: 300, borderRadius: 5, marginHorizontal: 10, padding: 14, marginTop: 20, backgroundColor: '#D5103F'}} /> 
+                  <Button onPressButton={this.Explorer} title="Sign In" style={{ width: 300, borderRadius: 5, marginHorizontal: 10, padding: 14, marginTop: 20, backgroundColor: '#D5103F'}} /> 
                 </View>
               </ImageBackground>
           </View>
         </View>
     )
 }
+  }
 
 const styles = StyleSheet.create({
     container: {
