@@ -5,7 +5,7 @@ export default class Button extends Component {
     render() {
         const { onPressButton, title, style } = this.props
         return (
-            <TouchableOpacity onPress={onPressButton} style={styles.btnDesc, style}>
+            <TouchableOpacity onPress={onPressButton} style={styles.btnDesc, styles.btnText, style}>
                 <Text style={styles.btnText}>{title}</Text>
             </TouchableOpacity>
         )
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     btnText: {
         color: '#fff',
         textAlign: 'center',
-        fontWeight: '500',
+        fontWeight: 'bold',
         fontSize: 14,
         textTransform: 'uppercase'
     }
